@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 	printf("[DEBUG] buffer @ %p: \'%s\'\n", buffer, buffer);
 	printf("[DEBUG] datafile @ %p: \'%s\"\n", datafile, datafile);
 
-	fd = open(datafile, 0_WRONLY|O_CREAT|O_APPEND, S_IRUSR|S_IWUSR);
+	fd = open(datafile, O_WRONLY|O_CREAT|O_APPEND, S_IRUSR|S_IWUSR);
 	if(fd == -1)
 		fatal("in main() while opening file");
 	printf("[DEBUG] file descriptor is %d\n", fd);
